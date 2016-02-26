@@ -16,8 +16,8 @@ function matchRuleShort(str, rule) {
 function checkTitle(){
   var title = document.title.toLowerCase();
   console.log(title);
-  chrome.storage.sync.get(["blocklist"], function(result) {
-    var array = result["blocklist"]?result["blocklist"]:[];
+  chrome.storage.sync.get(["blacklist"], function(result) {
+    var array = result["blacklist"]?result["blacklist"]:[];
     for(var i = 0;i<array.length;i++) {
         console.log(array[i]);
         if(matchRuleShort(title, array[i])){

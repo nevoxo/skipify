@@ -1,7 +1,7 @@
 {
    "name": "Skipify",
-   "description": "Skip songs in Spotify Web Player based on blacklist",
-   "version": "1.0.2",
+   "description": "Personal blacklist for Spotify",
+   "version": "1.0.3",
    "manifest_version": 2,
    "icons": {
       "128": "icon.png"

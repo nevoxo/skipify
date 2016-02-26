@@ -1,11 +1,11 @@
 function saveBlacklist() {
   var newBlockItem  = $('#block_title').val();
   if(newBlockItem.length > 0)
-  chrome.storage.sync.get(["blocklist"], function(result) {
-        var array = result["blocklist"]?result["blocklist"]:[];
+  chrome.storage.sync.get(["blacklist"], function(result) {
+        var array = result["blacklist"]?result["blacklist"]:[];
         array.unshift(newBlockItem);
         var jsonObj = {};
-        jsonObj["blocklist"] = array;
+        jsonObj["blacklist"] = array;
         chrome.storage.sync.set(jsonObj, function() {
           getBlacklist();
           $('#block_title').val("");
@@ -16,15 +16,15 @@ function saveBlacklist() {
 
 function deleteItem(value){
 console.log("Delete "+value);
-  chrome.storage.sync.get(["blocklist"], function(result) {
-        var array = result["blocklist"]?result["blocklist"]:[];
+  chrome.storage.sync.get(["blacklist"], function(result) {
+        var array = result["blacklist"]?result["blacklist"]:[];
         console.log(array);
         var index = array.indexOf(value);
         if(index !== -1)
           array.splice(index, 1);
         console.log("Index "+index);
         var jsonObj = {};
-        jsonObj["blocklist"] = array;
+        jsonObj["blacklist"] = array;
         chrome.storage.sync.set(jsonObj, function() {
           getBlacklist();
         });
@@ -41,8 +41,8 @@ $('.delete').on("click",function(){
 }
 
 function getBlacklist() {
-  chrome.storage.sync.get(["blocklist"], function(result) {
-    var array = result["blocklist"]?result["blocklist"]:[];
+  chrome.storage.sync.get(["blacklist"], function(result) {
+    var array = result["blacklist"]?result["blacklist"]:[];
     $('#blacklist').html("");
     if(array.length>0){
       for(var i = 0;i<array.length;i++) {
@@ -50,7 +50,7 @@ function getBlacklist() {
         bindMe();
       }
     }else {
-        $('#blacklist').append("<li id='empty'>No items in blacklist</li>");
+        $('#blacklist').append("<li id='empty'>No items in blacklist!</li>");
     }
  });
  
