@@ -1,0 +1,23 @@
+{
+   "name": "Skipify",
+   "description": "Skip songs in Spotify Web Player based on blacklist",
+   "version": "1.0.1",
+   "manifest_version": 2,
+   "icons": {
+      "128": "icon.png"
+   },
+   "browser_action": {
+    "default_title": "Skipify",
+    "default_icon": "icon.png"
+   },
+   "incognito": "split",
+   "background": {
+      "persistent": true,
+      "scripts": [ "background.js" ]
+   },
+   "permissions": [ "https://play.spotify.com/*", "tabs", "storage"  ],
+   "options_ui": {
+    "page": "blacklist.html",
+    "chrome_style": true
+  }
+}

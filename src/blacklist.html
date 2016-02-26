@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skipify</title>
+  <style>
+    header {
+      background-color: #E1372D;
+      color: #fff;
+      text-align: center;
+    }
+    
+    header h1 {
+      font-size: 30px;
+    }
+    
+    header h2 {
+      font-size: 20px;
+    }
+    
+    ul#blacklist {
+      list-style-type: none;
+      margin: 0;
+      padding: 0px;
+      font-size: 16px;
+    }
+    
+    ul#blacklist li span {
+      float: right;
+
+}
+
+ul#blacklist li {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 70%;
+    font-size: 18px;
+    height: 30px;
+    padding: 5px;
+}
+
+button {
+    height: 30px;
+    padding: 5px;
+    width: 20%;
+    font-size: 18px;
+    outline: none;
+}
+
+a {
+    color: #E1372D;
+    text-decoration: none;
+}
+        
+
+  </style>
+</head>
+
+<body> 
+  <main>
+    <div>
+    <h3>Add titles, artists, albums or anything else you don't want to listen on Spotify.</h3>
+    <input type="text" value="" id="block_title" placeholder="Use wildcard '*' for better results..." />
+    <button id="save">Skipify</button>
+     <br /><br /><hr />
+    <ul id="blacklist">
+      <li id="loading">Loading blocklist...</li>
+    </ul>
+    <hr />
+    <ul id="hint">
+      <li>Blocklist is <strong>case insensitive</strong> ("justin bieber" matches "JUSTIN BIEBER")</li>
+      <li>Use wildcards ("*") to block titles or artists ("Ju*er" matches "Justin Bieber")</li>
+      <li><strong><span style="color: red">Attention!</span> Playing album or playlist from blocked artist/blocked songs can result in not responding tab or browser!</strong> Maxium skip count is set 25 in 30 seconds before pausing playback and temporarely disabling skipify.</li>
+    </ul>
+    </div>
+  </main>
+  <script src="jquery.min.js"></script>
+  <script src="blacklist.js"></script>
+</body>
+</html>
