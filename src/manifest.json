@@ -1,7 +1,7 @@
 {
    "name": "Skipify",
    "description": "Personal blacklist for Spotify",
-   "version": "1.0.6",
+   "version": "1.0.7",
    "manifest_version": 2,
    "icons": {
       "128": "icon.png",
@@ -17,7 +17,7 @@
       "persistent": true,
       "scripts": [ "background.js" ]
    },
-   "permissions": [ "https://play.spotify.com/*", "tabs", "storage"  ],
+   "permissions": [ "https://open.spotify.com/*", "tabs", "storage"  ],
    "options_ui": {
     "page": "blacklist.html",
     "chrome_style": true

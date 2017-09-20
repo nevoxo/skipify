@@ -1,10 +1,10 @@
 function skip(){
-  document.getElementById('app-player').contentDocument.getElementById('next').click();
+  document.getElementsByClassName('spoticon-skip-forward-16')[0].click();
   skipCount++;
 }
 
 function pause(){
-  document.getElementById('app-player').contentDocument.getElementById('play-pause').click();
+  document.getElementsByClassName('control-button--circled')[0].click();
 }
 
 function matchRuleShort(str, rule) {
